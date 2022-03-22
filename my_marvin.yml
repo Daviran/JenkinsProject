@@ -1,0 +1,80 @@
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  remotingSecurity:
+    enabled: true
+  
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+        - name: "admin"
+          assignments:
+          - "chocolateen"
+          description: "Marvin master"
+          pattern: ".*"
+          permissions:
+          - "Overall/Administer"
+
+        - name: "ape"
+          assignments:
+          - "i_dont_know"
+          pattern: ".*"
+          permissions:
+          - "Job/Cancel"
+          - "Job/Workspace"
+
+        - name: "assist"
+          assignments:
+          - "Nassim"
+          name: "assist"
+          pattern: ".*"
+          permissions:
+          - "Job/Read"
+          - "Job/Workspace"
+
+        - name: "gorilla"
+          assignments:
+          - "Garance"
+          name: "gorilla"
+          pattern: ".*"
+          permissions:
+          - "Job/Cancel"
+          - "Job/Move"
+          - "Job/Delete"
+          - "Job/Create"
+          - "Job/Configure"
+  securityRealm:
+     local:
+      allowsSignup: false
+      users:
+        - id: "chocolateen"
+          name: "Hugo"
+          password: ${USER_CHOCOLATEEN_PASSWORD}
+        - id: "vaugie_g"
+          name: "Garance"
+          password: ${USER_VAUGIE_G_PASSWORD}
+        - id: "i_dont_know"
+          name: "Jeremy"
+          password: ${USER_I_DONT_KNOW_PASSWORD}
+        - id: "nasso"
+          name: "Nassim"
+          password: ${USER_NASSO_PASSWORD}
+
+  slaveAgentPort: 50000
+  systemMessage: "Welcome to the Chocolatine-Powered Marvin Jenkins Instance."
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+
+jobs:
+  - file: "job_dsl.groovy"
