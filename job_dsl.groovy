@@ -40,7 +40,7 @@ job('Tools/SEED') {
         shell('make tests_run')
         shell('make clean')
         }
-            }""")
+            }""".stripIndent())
         
         }
         
