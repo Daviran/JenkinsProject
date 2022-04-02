@@ -23,8 +23,7 @@ job('Tools/SEED') {
     }
     steps {
         dsl {
-            text("""
-            job("\$DISPLAY_NAME"){
+            text("""job("\$DISPLAY_NAME"){
         scm {
             github("\$GITHUB_NAME")
         }
