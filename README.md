@@ -7,5 +7,7 @@ A small Jenkins Project made at Epitech : create a Jenkins instance that can aut
   - Testing scripts
 
 
-Disclaimer: Some of the commit message might be useless, as the grade for the project was given by automated tests, so some tweaks occured to match the automated test desire.
+Disclaimer: Some of the commit message might be useless, as the grade for the project was given by automated tests, so some tweaks occured to match the automated test desire. <br>
+
+For Epi students: beware, -42 also occurred recently for those who wanted a free pass on this project :) 
 
